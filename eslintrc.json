@@ -1,0 +1,76 @@
+{
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:import/errors",
+		"plugin:jsx-a11y/recommended"
+	],
+	"env": {
+		"browser": true,
+		"es6": true
+	},
+	"parserOptions": {
+		"sourceType": "module",
+		"ecmaVersion": 2018,
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"plugins": [
+		"react",
+		"import",
+		"jsx-a11y"
+	],
+	"rules": {
+		"comma-dangle": [ "error", "always-multiline" ],
+		"comma-spacing": "error",
+		"curly": [ "warn", "multi-line" ],
+		"dot-notation": "error",
+		"eol-last": "error",
+		"eqeqeq": "error",
+		"func-call-spacing": [ "error", "never" ],
+		"indent": [ "error", "tab", {
+			"SwitchCase": 1
+		}],
+		"no-class-assign": "off",
+		"no-console": "off",
+		"no-loop-func": "error",
+		"no-nested-ternary": "error",
+		"no-unused-expressions": "error",
+		"no-unused-vars": [ "error", {
+			"varsIgnorePattern": "log"
+		}],
+		"object-curly-spacing": [ "error", "always", {
+			"objectsInObjects": false,
+			"arraysInObjects": false
+		}],
+		"prefer-const": "error",
+		"prefer-spread": "error",
+		"prefer-template": "error",
+		"strict": [ "error", "global" ],
+		"space-in-parens": [ "error", "always", {
+			"exceptions": [ "{}", "[]", "empty" ]
+		}],
+		"quotes": [ "error", "single" ],
+		"semi": [ "error", "always" ]
+	},
+	"settings": {
+		"react": {
+			"pragma": "React",
+			"version": "16.13"
+		},
+		"import/resolver": {
+			"node": {
+				"moduleDirectory": [
+					"node_modules",
+					"src"
+				]
+			}
+		}
+	},
+	"globals": {
+		"Atomics": "readonly",
+		"SharedArrayBuffer": "readonly",
+		"process": true
+	}
+}

@@ -1,0 +1,59 @@
+
+@use 'styles/core';
+@use 'styles/modules' as *;
+
+
+//
+//	Frontier / Base / Alignment
+//
+
+
+$spacer-iterations: 6 !default;
+
+$spacer-props: (
+	'margin': 'm',
+	'padding': 'p'
+) !default;
+
+$spacer-sides: (
+	'top': 't',
+	'right': 'r',
+	'bottom': 'b',
+	'left': 'l'
+) !default;
+
+@each $prop, $prop-key in $spacer-props {
+	@for $i from 0 through $spacer-iterations {
+		@each $side, $side-key in $spacer-sides {
+			.-#{$prop-key}#{$side-key}#{$i} {
+				#{$prop}-#{$side}: grid-baseline($i) !important;
+			}
+			.-#{$prop-key}#{$side-key}s#{$i} {
+				#{$prop}-#{$side}: grid-baseline($i*4) !important;
+			}
+			@if $prop == 'margin' {
+				.-#{$prop-key}#{$side-key}n#{$i} {
+					#{$prop}-#{$side}: grid-baseline(-$i) !important;
+				}
+			}
+		}
+		.-#{$prop-key}x#{$i} {
+			#{$prop}-left: grid-gutter($i*0.5) !important;
+			#{$prop}-right: grid-gutter($i*0.5) !important;
+		}
+		.-#{$prop-key}y#{$i} {
+			#{$prop}-top: grid-baseline($i) !important;
+			#{$prop}-bottom: grid-baseline($i) !important;
+		}
+		@if $prop == 'margin' {
+			.-#{$prop-key}xn#{$i} {
+				#{$prop}-left: grid-gutter(-$i*0.5) !important;
+				#{$prop}-right: grid-gutter(-$i*0.5) !important;
+			}
+			.-#{$prop-key}yn#{$i} {
+				#{$prop}-left: grid-baseline(-$i) !important;
+				#{$prop}-right: grid-baseline(-$i) !important;
+			}
+		}
+	}
+}

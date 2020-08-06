@@ -1,0 +1,16 @@
+
+@use 'styles/modules' as *;
+
+
+//
+//	Frontier / Styles / Themes
+//
+
+
+:root {
+	@include color-theme-set( root );
+}
+
+.-t-dark {
+	@include color-theme-set( dark );
+}

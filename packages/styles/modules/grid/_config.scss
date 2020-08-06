@@ -1,0 +1,34 @@
+
+@use 'sass:map';
+@use 'styles/core';
+
+
+//
+//	Frontier / Modules / Grid / Config
+//
+
+
+$config: () !default;
+$use_defaults: true !default;
+
+$config-defaults: (
+	default: (
+		columns: 12,
+		column-w: 90,
+		gutter-w: 30
+	),
+	small: (
+		columns: 6,
+		column-w: 90,
+		gutter-w: 30
+	),
+	large: {
+		columns: 16,
+		column-w: 90,
+		gutter-w: 30
+	},
+);
+
+@if $use_defaults {
+	$config: map.merge( $config, $config-defaults ) !global;
+}

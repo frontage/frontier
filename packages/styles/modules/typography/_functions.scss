@@ -1,0 +1,57 @@
+
+@use 'styles/core';
+@use 'styles/modules/grid' as grid;
+@use 'config';
+
+
+//
+//	Frontier / Modules / Typography / Functions
+//
+
+
+//	Font face
+@mixin font( $font-family, $file-path, $weight: normal, $style: normal, $version: 1 ) {
+	@font-face {
+		font-family: $font-family;
+		src: url('#{ $file-path }.woff2?bust=v#{ $version }')  format('woff2'),
+			 url('#{ $file-path }.woff?bust=v#{ $version }')   format('woff');
+		font-weight: $weight;
+		font-style: $style;
+		font-stretch: normal;
+		unicode-range: U+0020-FB02;
+	}
+}
+
+//	Font size
+@mixin size( $type-key: default, $lines: null, $margin: null ) {
+	$font-size: $type-key;
+	$type-lines: $lines;
+	$type-margin: if( $margin == null, 0, $margin );
+
+	@if type-of( $type-key ) == string {
+		$type-lines: if( $lines == null, lines( $type-key ), $lines );
+		$type-margin: if( $margin == null, margin( $type-key ), $margin );
+		$font-size: size( $type-key );
+	}
+
+	@if $type-margin {
+		margin: grid.baseline( $type-margin ) 0;
+	}
+	font-size: core.rem( $font-size );
+	line-height: core.rem( core.$base-line * $type-lines );
+}
+
+//	Size in PX
+@function size( $type-key: default, $map: config.$config ) {
+	@return core.get( $map, '#{ $type-key }.px', 16 );
+}
+
+//	Lines
+@function lines( $type-key: default, $map: config.$config ) {
+	@return core.get( $map, '#{ $type-key }.lines', 1 );
+}
+
+//	Margin
+@function margin( $type-key: default, $map: config.$config ) {
+	@return core.get( $map, '#{ $type-key }.margin', 0 );
+}

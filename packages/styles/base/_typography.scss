@@ -1,0 +1,46 @@
+
+@use 'styles/core';
+@use 'styles/modules' as *;
+
+
+//
+//	Frontier / Base / Typography
+//
+
+
+/**
+ *	Type scale
+ *	--------------------------------------------------
+**/
+
+
+@each $type-key, $type-map in $type-config {
+	$type-el: core.get( $type-map, 'el' );
+	$type-bp: core.get( $type-map, 'breakpoints' );
+
+	.#{ $type-key } {
+		@include type-size( $type-key );
+
+		@if $type-bp {
+			@each $bp-key, $bp-type-value in $type-bp {
+				@include breakpoint-for( $bp-key ) using ( $bp ) {
+					@if type-of( $bp-type-value ) == map {
+						@include type-size(
+							core.get( $bp-type-value, 'px' ),
+							core.get( $bp-type-value, 'lines' ),
+							core.get( $bp-type-value, 'margin' )
+						);
+					} @else {
+						@include type-size( $bp-type-value );
+					}
+				}
+			}
+		}
+	}
+
+	@if type-of( $type-el ) == string {
+		#{ $type-el } {
+			@extend .#{ $type-key };
+		}
+	}
+}

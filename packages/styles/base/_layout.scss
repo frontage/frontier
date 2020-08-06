@@ -1,0 +1,235 @@
+
+@use 'styles/core';
+@use 'styles/modules' as *;
+
+
+//
+//	Frontier / Base / Layout
+//
+
+
+%section {
+	display: block;
+	background-color: color-get( --bg );
+}
+	%container {
+		margin-left: auto; margin-right: auto; padding: 0 grid-gutter(0.5); box-sizing: border-box;
+
+		//	Helpers	 ------------
+		&.-max-100 {
+			max-width: 100%;
+		}
+	}
+		%row {
+			display: flex; flex-flow: row wrap; flex: 1 1 auto;
+
+			&.-pos-center {
+				justify-content: center;
+			}
+
+			& %row {
+				margin: 0 grid-gutter(-0.5);
+			}
+		}
+			%col {
+				width: percentage(1/4); max-width: 100%;
+				padding: {
+					left: grid-gutter(0.5);
+					right: grid-gutter(0.5);
+				}
+				box-sizing: border-box;
+				flex: 1 1 0%;
+
+				&.-pos-right {
+					margin-left: auto;
+				}
+				&.-pos-center {
+					margin: 0 auto;
+					justify-content: center;
+				}
+			}
+
+//	Layout
+
+$grid-cols: core.get( $grid-config, 'default.columns' );
+
+.outline {
+	min-height: 100vh;
+
+	display: flex;
+	flex-flow: column nowrap;
+
+	.a-view {
+		flex: 1 0 auto;
+	}
+}
+
+.section {
+	padding: grid-baseline(12) 0;
+	@extend %section;
+}
+	.container {
+		@extend %container;
+	}
+		.row {
+			@extend %row;
+		}
+			.col {
+				@extend %col;
+
+				&[class*="-span-"] {
+					flex: 0 0 auto;
+				}
+
+				&.-span-auto {
+					width: auto;
+				}
+
+				&.-span-shrink {
+					min-width: 0;
+					overflow: hidden;
+					flex: 1 1 auto;
+				}
+
+				&.-span-third {
+					width: percentage( 1/3 );
+				}
+				&.-span-quarter {
+					width: percentage( 1/4 );
+				}
+				&.-span-fifth {
+					width: percentage( 1/5 );
+				}
+				&.-span-half {
+					width: percentage( 1/2 );
+				}
+				&.-span-twothirds {
+					width: percentage( 2/3 );
+				}
+				&.-span-wide {
+					width: percentage( 3/4 );
+				}
+				&.-span-full {
+					width: percentage( 1 );
+				}
+
+				@for $i from 1 through $grid-cols {
+					&.-span-#{$i} {
+						width: grid-column($i);
+					}
+				}
+			}
+
+@each $bp-key, $bp-map in $breakpoint-config {
+	@include breakpoint-for( #{$bp-key} ) using ( $bp ) {
+		$grid-cols: core.get( $grid-config, '#{$bp-key}.columns' );
+		$bp-max: core.get( $bp, 'max' );
+
+		:root {
+			--breakpoint: "#{$bp-key}";
+			--bp-columns: #{$grid-cols};
+		}
+
+		%container {
+			width: grid-column( $grid-cols ) + grid-gutter(1);
+			max-width: percentage( $bp-max / 100 );
+
+			&.-span-narrow { width: grid-column( $grid-cols - 2 ) + grid-gutter(1); }
+			&.-span-half { width: grid-column( $grid-cols / 2 ) + grid-gutter(1); }
+
+			@for $i from 1 through $grid-cols {
+				&.-max-#{$i} {
+					max-width: grid-column($i);
+				}
+			}
+		}
+
+		%col {
+			@for $i from 1 through $grid-cols {
+				@if $bp-key == small {
+					&.-max-s-#{$i} {
+						max-width: grid-column($i);
+					}
+					&.-min-s-#{$i} {
+						min-width: grid-column($i);
+					}
+					&.-ol-s-#{$i} {
+						margin-left: grid-column($i);
+					}
+					&.-ol#{$i} {
+						margin-left: 0;
+					}
+					//	Max percentage columns
+					&.-maxp-s-#{$i} {
+						max-width: grid-column-fluid($i);
+					}
+				} @else {
+					&.-max-#{$i} {
+						max-width: grid-column($i);
+					}
+					&.-min-#{$i} {
+						min-width: grid-column($i);
+					}
+					&.-ol#{$i} {
+						margin-left: grid-column($i);
+					}
+					//	Max percentage columns
+					&.-maxp-#{$i} {
+						max-width: grid-column-fluid($i);
+					}
+				}
+			}
+		}
+	}
+}
+
+@include breakpoint-for( small ) using ( $bp ) {
+	%col {
+		width: percentage( 1 );
+		flex: 1 0 percentage( 1 );
+
+		//	Column Sizes	 ------------
+
+		&.-span-fifth,
+		&.-span-quarter,
+		&.-span-third,
+		&.-span-twothirds,
+		&.-span-half,
+		&.-span-wide,
+		&.-span-auto {
+			width: percentage( 1 );
+			flex: 1 0 percentage( 1 );
+		}
+
+		&.-span-s-fifth {
+			width: percentage( 1/5 );
+			flex: 1 0 percentage( 1/5 );
+		}
+		&.-span-s-quarter {
+			width: percentage( 1/4 );
+			flex: 1 0 percentage( 1/4 );
+		}
+		&.-span-s-third {
+			width: percentage( 1/3 );
+			flex: 1 0 percentage( 1/3 );
+		}
+		&.-span-s-half {
+			width: percentage( 1/2 );
+			flex: 1 0 percentage( 1/2 );
+		}
+
+		&.-span-s-auto {
+			width: auto;
+			flex: 0 1 auto;
+		}
+
+		&.-shrink {
+			flex: 0 1 0;
+		}
+
+		//	Max-width overrides
+
+		&.-min-s-none { min-width: 0; }
+		&.-max-s-none { max-width: none; }
+	}
+}

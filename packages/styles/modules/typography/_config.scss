@@ -1,0 +1,101 @@
+
+@use 'styles/core';
+@use 'sass:map';
+
+
+//
+//	Frontier / Modules / Typography / Config
+//
+
+
+$config: () !default;
+$use_defaults: true !default;
+
+$config-defaults: (
+	//	Type Defaults  ------
+	'default': (
+		px: core.$base-size,
+		lines: 3,
+		margin: 1,
+		el: p, // h5
+	),
+
+	//	Type Scales	 --------
+	'f1': (
+		px: 72,
+		lines: 10,
+		margin: 4,
+		el: h1,
+
+		breakpoints: (
+			'small': ( px: 50, lines: 8, margin: 3 ),
+		),
+	),
+	'f2': (
+		px: 50,
+		lines: 7.5,
+		margin: 3,
+		el: h2,
+
+		breakpoints: (
+			'small': 'f3',
+		),
+	),
+	'f3': (
+		px: 32,
+		lines: 5,
+		margin: 2,
+		el: h3,
+
+		breakpoints: (
+			'small': 'f4',
+		),
+	),
+	'f4': (
+		px: 28,
+		lines: 4.5,
+		margin: 2,
+		el: h4,
+	),
+	'f5': (
+		px: 24,
+		lines: 4.5,
+		margin: 2,
+	),
+	'f6': (
+		px: 18,
+		lines: 3,
+		margin: 1,
+	),
+
+	//	Small
+	'f7': (
+		px: 15,
+		lines: 3,
+	),
+	'f8': (
+		px: 14,
+		lines: 2.5,
+		margin: 1,
+		el: h6,
+	),
+	'f9': (
+		px: 13,
+		lines: 2.5,
+		margin: 1,
+	),
+	'f10': (
+		px: 12,
+		lines: 2,
+		margin: 1,
+	),
+	'f11': (
+		px: 11,
+		lines: 2.5,
+		margin: 1,
+	),
+);
+
+@if $use_defaults {
+	$config: map.merge( $config, $config-defaults );
+}

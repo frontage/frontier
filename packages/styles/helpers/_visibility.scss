@@ -1,0 +1,39 @@
+
+@use 'styles/modules' as *;
+
+
+//
+//	Frontier / Helpers / Visibility
+//
+
+
+.-visually-hidden {
+	width: 1px; height: 1px;
+	margin: -1px; padding: 0;
+	clip: rect( 0, 0, 0, 0 );
+	position: absolute;
+	border: 0;
+	overflow: hidden;
+}
+
+.-show-s {
+	display: none!important;
+}
+
+/**
+ * 	Media Queries
+ *	--------------------------------------------------
+ */
+
+/** Breakpoint:	Small ----------------------- */
+
+@include breakpoint-for( small ) using ( $bp ) {
+
+	.-hide-s {
+		display: none!important;
+	}
+
+	.-show-s {
+		display: block!important;
+	}
+}

@@ -1,0 +1,24 @@
+
+@use 'styles/modules' as *;
+
+
+//
+//	Frontier / Print / Layout
+//
+
+
+@media print {
+
+	.container {
+		width: 100% !important;
+		max-width: none !important;
+	}
+		.row {
+			margin-bottom: grid-baseline(2);
+		}
+			.col {
+				&[class*=max-] {
+					max-width: none !important;
+				}
+			}
+}

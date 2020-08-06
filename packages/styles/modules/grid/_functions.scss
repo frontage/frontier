@@ -1,0 +1,61 @@
+
+@use 'styles/core' as *;
+@use 'config';
+
+
+//
+//	Frontier / Modules / Grid / Functions
+//
+
+
+/*
+ *	Columns
+ *	--------------------------------------------------
+ */
+
+@function column( $columns: 1, $context: get-state( 'breakpoint' ) ) {
+	@if type-of( $columns ) == number {
+		$grid-map: get( config.$config, $context );
+		$column-w: get( $grid-map, 'column-w' );
+		$gutter-w: get( $grid-map, 'gutter-w' );
+		$context: 16;
+
+		@return ( $columns * ( $column-w + $gutter-w ) ) / $context * 1em;
+	} @else {
+		@error ('`$columns` of `#{$columns}` is not a number.');
+	}
+}
+
+@function column-fluid( $columns: 1, $context: get-state( 'breakpoint' ) ) {
+	@if type-of( $context ) == string {
+		$grid-cols: get( config.$config, '#{$context}.columns' );
+		@return $columns * ( 100% / $grid-cols );
+	} @else {
+		@error ('`$context` of `#{$context}` is not a string.');
+	}
+}
+
+/*
+ *	Gutters
+ *	--------------------------------------------------
+ */
+
+@function gutter( $gutters: 1, $context: get-state( 'breakpoint' ) ) {
+	@if type-of( $gutters ) == number {
+		$grid-map: get( config.$config, $context );
+		$gutter-w: get( config.$config, '#{$context}.gutter-w' );
+
+		@return $gutters * ( $gutter-w / 16 ) * 1em;
+	} @else {
+		@error ('`$gutters` of `#{$gutters}` is not a number.');
+	}
+}
+
+/*
+ *	Baseline
+ *	--------------------------------------------------
+ */
+
+ @function baseline( $lines: 1 ) {
+	@return rem( $base-line * $lines );
+}

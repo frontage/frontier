@@ -1,0 +1,46 @@
+
+@use 'styles/modules' as *;
+
+
+//
+//	Frontier / Print / Base
+//
+
+
+@media print {
+	body {
+		width: 100%; height: auto;
+		color: color-get( --base );
+		font-size: 60%;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: 0;
+		color: color-get( --base );
+	}
+
+	h1 {
+		max-width: 75%;
+		margin-bottom: lines(1);
+	}
+
+	svg {
+		color: color-get( --base );
+	}
+
+	img {
+		max-width: lines(40);
+	}
+
+	section {
+		padding: lines(2) 0;
+	}
+
+	video {
+		display: none;
+	}
+}
+
+@page {
+	margin: 1cm;
+}

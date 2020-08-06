@@ -1,0 +1,20 @@
+
+@use 'styles/modules' as *;
+
+
+//
+//	Frontier / Styles / Base / Init
+//
+
+
+body {
+	color: color-get( --text );
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: color-get( --headline );
+}
+
+p {
+	color: color-get( --text );
+}
