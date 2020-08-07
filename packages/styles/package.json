@@ -1,0 +1,22 @@
+{
+	"name": "@frontage/frontier-styles",
+	"title": "Frontier styles",
+	"version": "0.1.0",
+	"description": "Frontier SCSS Framework",
+	"main": "index.scss",
+	"scripts": {},
+	"author": "Kira Derksen & Zachary Evans (http://frontage.io)",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/frontage/frontier",
+		"directory": "packages/styles"
+	},
+	"keywords": [
+		"frontier",
+		"frontage",
+		"framework",
+		"front-end",
+		"sass"
+	]
+}

@@ -44,3 +44,22 @@
 		}
 	}
 }
+
+
+.-f-caps {
+	text-transform: uppercase;
+}
+
+.-f-strike {
+	text-decoration: line-through
+}
+
+
+//	Weights		----------------
+
+.-f-light { font-weight: 100; }
+.-f-regular { font-weight: normal; }
+.-f-medium { font-weight: 500; }
+.-f-semi-bold { font-weight: 600; }
+.-f-bold { font-weight: bold; }
+.-f-black { font-weight: 900; }

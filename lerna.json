@@ -1,0 +1,14 @@
+{
+	"npmClient": "npm",
+	"packages": [
+		"packages/*",
+		"apps/*"
+	],
+	"version": "0.1.0",
+	"command": {
+		"version": {
+			"allowBranch": "master"
+		},
+		"bootstrap": {}
+	}
+}
