@@ -22,11 +22,11 @@ $config-defaults: (
 		column-w: 90,
 		gutter-w: 30
 	),
-	large: {
+	large: (
 		columns: 16,
 		column-w: 90,
 		gutter-w: 30
-	},
+	)
 );
 
 @if $use_defaults {

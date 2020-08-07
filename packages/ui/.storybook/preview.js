@@ -1,0 +1,1 @@
+import '@frontage/frontier-styles/index.scss';

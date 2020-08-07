@@ -12,9 +12,16 @@
 		"@frontage/frontier-styles": "^0.1.0",
 		"react": "^16.13.1"
 	},
+    "devDependencies": {
+        "@storybook/react": "^5.3.19",
+        "css-loader": "^2.1.1",
+        "sass": "^1.26.10",
+		"sass-loader": "^9.0.3",
+		"style-loader": "^1.2.1"
+    },
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/frontage/frontier",
+		"url": "https://github.com/frontage/frontier.git",
 		"directory": "packages/ui"
 	},
 	"keywords": [

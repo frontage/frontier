@@ -1,13 +1,13 @@
 {
 	"name": "frontier",
 	"title": "Frontier",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"main": "index.js",
 	"description": "Sass utilities system",
 	"homepage": "https://github.com/frontage/frontier#readme",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/frontage/frontier"
+		"url": "https://github.com/frontage/frontier.git"
 	},
 	"author": "Kira Derksen & Zachary Evans (http://frontage.io)",
 	"license": "MIT",
@@ -23,13 +23,18 @@
 		"url": "https://github.com/frontage/frontier/issues"
 	},
 	"scripts": {
-		"storybook": "start-storybook",
+		"storybook": "cd packages/ui && start-storybook",
 		"bootstrap": "npm i && lerna bootstrap --hoist",
 		"update": "lernaupdate"
 	},
+	"dependencies": {
+		"clsx": "^1.1.1",
+		"prop-types": "^15.7.2",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1"
+	},
 	"devDependencies": {
 		"@babel/core": "^7.11.1",
-		"@storybook/react": "^5.3.19",
 		"babel-loader": "^8.1.0",
 		"eslint": "^7.3.1",
 		"eslint-plugin-import": "^2.21.2",
@@ -38,12 +43,5 @@
 		"lerna": "^3.22.1",
 		"lerna-update-wizard": "^0.17.8",
 		"webpack": "^4.44.1"
-	},
-	"dependencies": {
-		"clsx": "^1.1.1",
-		"prop-types": "^15.7.2",
-		"react": "^16.13.1",
-		"react-dom": "^16.13.1",
-		"sass": "^1.26.10"
 	}
 }

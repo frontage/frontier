@@ -1,10 +1,54 @@
 
+@use '~@frontage/frontier-styles/modules' as *;
+
 
 //
-//	Frontier / UI / Component / List
+//	Frontier / UI / Components / List
 //
 
 
 .c-list {
 	$c: &;
+
+	@include type-size( default );
+	list-style: none;
+	padding-left: grid-gutter(0.75);
+
+	// Elements
+
+	li {
+		&:not(:last-child) {
+			margin-bottom: grid-baseline(3);
+		}
+
+		&::before {
+			// @include type-family( 'suisseintlcond' );
+			content: "\2022";
+			display: inline-block;
+			color: color-get( --brand-mid );
+			font-weight: 600;
+			width: grid-gutter(0.75);
+			margin-left: grid-gutter(-0.75);
+		}
+	}
+
+	// Formats
+
+	&.-format-list {
+		li::before {
+			font-size: 140%;
+		}
+	}
+
+	&.-format-ordered {
+		counter-reset: li;
+
+		li {
+			counter-increment: li;
+
+			&::before {
+				content: counter(li) ". ";
+			}
+		}
+	}
 }

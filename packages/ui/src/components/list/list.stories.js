@@ -5,11 +5,11 @@ import { storiesOf } from '@storybook/react';
 
 
 //	App
-import List from './list';
+import List from './index';
 
 
 //
-//	Frontier / UI / List
+//	Frontier / UI / Components / List
 //
 
 
