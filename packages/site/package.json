@@ -1,6 +1,9 @@
 {
-	"name": "frontier",
+	"name": "@frontage/frontier-site",
+	"title": "Frontier Site",
 	"version": "0.1.0",
+	"description": "Frontier Site",
+	"author": "Kira Derksen & Zachary Evans (http://frontage.io)",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
@@ -8,9 +11,12 @@
 		"start": "next start"
 	},
 	"dependencies": {
-		"@frontage/frontier-ui": "^0.1.0",
+		"clsx": "^1.1.1",
 		"next": "^9.5.2",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1"
+	},
+	"devDependencies": {
+		"@frontage/frontier-ui": "^0.1.0"
 	}
 }
