@@ -1,5 +1,5 @@
 
-@use '~@frontage/frontier-styles/modules' as *;
+@use '@frontage/frontier-styles/index' as *;
 
 
 //
@@ -12,30 +12,27 @@
 
 	@include type-size( default );
 	list-style: none;
-	padding-left: grid-gutter(0.75);
 
 	// Elements
 
 	li {
+
 		&:not(:last-child) {
-			margin-bottom: grid-baseline(3);
+			margin-bottom: grid-baseline(2);
 		}
 
 		&::before {
-			// @include type-family( 'suisseintlcond' );
 			content: "\2022";
 			display: inline-block;
-			color: color-get( --brand-mid );
 			font-weight: 600;
-			width: grid-gutter(0.75);
-			margin-left: grid-gutter(-0.75);
+			width: grid-gutter(0.5);
 		}
 	}
 
 	// Formats
 
 	&.-format-list {
-		li::before {
+		li:not(.-format-icon)::before {
 			font-size: 140%;
 		}
 	}
@@ -48,7 +45,21 @@
 
 			&::before {
 				content: counter(li) ". ";
+				width: grid-gutter(0.75);
 			}
+		}
+	}
+
+	li.-format-icon {
+		display: flex;
+		align-items: flex-start;
+
+		&::before {
+			content: none;
+		}
+
+		.c-icon {
+			padding-right: grid-gutter(0.25);
 		}
 	}
 }

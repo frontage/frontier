@@ -91,14 +91,17 @@ $grid-cols: core.get( $grid-config, 'default.columns' );
 					flex: 1 1 auto;
 				}
 
-				&.-span-third {
-					width: percentage( 1/3 );
+				&.-span-sixth {
+					width: percentage( 1/6 );
+				}
+				&.-span-fifth {
+					width: percentage( 1/5 );
 				}
 				&.-span-quarter {
 					width: percentage( 1/4 );
 				}
-				&.-span-fifth {
-					width: percentage( 1/5 );
+				&.-span-third {
+					width: percentage( 1/3 );
 				}
 				&.-span-half {
 					width: percentage( 1/2 );
@@ -190,6 +193,7 @@ $grid-cols: core.get( $grid-config, 'default.columns' );
 
 		//	Column Sizes	 ------------
 
+		&.-span-sixth,
 		&.-span-fifth,
 		&.-span-quarter,
 		&.-span-third,
