@@ -12,12 +12,10 @@
 		"react": "^16.13.1"
 	},
 	"devDependencies": {
-		"@frontage/frontier-styles": "^0.1.0",
-		"@storybook/react": "^5.3.19",
-		"css-loader": "^2.1.1",
-		"sass": "^1.26.10",
-		"sass-loader": "^9.0.3",
-		"style-loader": "^1.2.1"
+		"@storybook/react": "^5.3.19"
+	},
+	"peerDependencies": {
+		"@frontage/frontier-styles": "^0.1.0"
 	},
 	"repository": {
 		"type": "git",

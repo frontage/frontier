@@ -43,7 +43,6 @@
 		"eslint-plugin-jsx-a11y": "^6.3.1",
 		"eslint-plugin-react": "^7.20.0",
 		"lerna": "^3.22.1",
-		"lerna-update-wizard": "^0.17.8",
-		"webpack": "^4.44.1"
+		"lerna-update-wizard": "^0.17.8"
 	}
 }

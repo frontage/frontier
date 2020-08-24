@@ -3,7 +3,7 @@
 	"title": "Frontier styles",
 	"version": "0.1.0",
 	"description": "Frontier SCSS Framework",
-	"main": "index.scss",
+	"main": "./index.scss",
 	"scripts": {},
 	"author": "Kira Derksen & Zachary Evans (http://frontage.io)",
 	"license": "MIT",

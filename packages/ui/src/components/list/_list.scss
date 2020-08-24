@@ -1,13 +1,11 @@
 
-@use '@frontage/frontier-styles/index' as *;
-
 
 //
 //	Frontier / UI / Components / List
 //
 
 
-.c-list {
+#{ $c-list } {
 	$c: &;
 
 	@include type-size( default );
