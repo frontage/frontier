@@ -85,6 +85,6 @@ $config-theme-defaults: (
 );
 
 @if $use_defaults {
-	$config: map.merge( $config, $config-defaults ) !global;
+	$config: map.merge( $config-defaults, $config ) !global;
 	$config-themes: map.merge( $config-themes, $config-theme-defaults ) !global;
 }

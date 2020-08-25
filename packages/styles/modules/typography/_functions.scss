@@ -1,6 +1,6 @@
 
 @use '../../core';
-@use '../../modules/grid' as grid;
+// @use '../../modules/grid' as grid;
 @use 'config';
 
 
@@ -35,7 +35,7 @@
 	}
 
 	@if $type-margin {
-		margin: grid.baseline( $type-margin ) 0;
+		// margin: grid.baseline( $type-margin ) 0;
 	}
 	font-size: core.rem( $font-size );
 	line-height: core.rem( core.$base-line * $type-lines );

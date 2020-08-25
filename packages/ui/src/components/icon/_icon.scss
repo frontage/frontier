@@ -1,4 +1,6 @@
 
+@use '@frontage/frontier-styles/modules' as *;
+
 
 //
 //	Frontier / UI / Components / Icon
@@ -6,6 +8,7 @@
 
 
 #{ $c-icon } {
+	color: $test;
 	position: relative;
 	display: inline-flex; align-items: center; justify-content: center;
 	flex-shrink: 0;
