@@ -1,13 +1,13 @@
 
-@use '@frontage/frontier-styles/modules' as *;
+@use '../../modules' as *;
 
 
 //
-//	Frontier / UI / Components / List
+//	Frontier / Styles / Components / List
 //
 
 
-#{ $c-list } {
+.c-list {
 	$c: &;
 
 	@include type-size( default );

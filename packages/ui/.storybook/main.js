@@ -9,11 +9,11 @@ module.exports = {
 				'css-loader',
 				{
 					loader: 'sass-loader',
-					options: {
-						sassOptions: {
-							includePaths: [ '../../../' ],
-						},
-					},
+					// options: {
+					// 	sassOptions: {
+					// 		includePaths: [ '../../../' ],
+					// 	},
+					// },
 				}
 			],
 		});

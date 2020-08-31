@@ -5,16 +5,16 @@
 	"description": "Frontier Component Library",
 	"main": "./src/index.js",
 	"module": "./src/index.js",
-	"scripts": {},
+	"scripts": {
+		"storybook": "start-storybook"
+	},
 	"author": "Kira Derksen & Zachary Evans (http://frontage.io)",
 	"license": "MIT",
 	"dependencies": {
 		"react": "^16.13.1"
 	},
 	"devDependencies": {
-		"@storybook/react": "^5.3.19"
-	},
-	"peerDependencies": {
+		"@storybook/react": "^5.3.19",
 		"@frontage/frontier-styles": "^0.1.0"
 	},
 	"repository": {

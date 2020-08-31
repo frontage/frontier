@@ -4,11 +4,10 @@
 //	Frontier / Styles / Modules
 //
 
-$test: #FFCC00 !default;
 
 @forward 'breakpoints' as breakpoint-*;
-@forward 'typography' as type-*;
-@forward 'grid' as grid-*;
 @forward 'colors' as color-*;
-@forward 'spacing' as s-*;
 @forward 'dev' as dev-*;
+@forward 'grid' as grid-*;
+@forward 'spacing' as s-*;
+@forward 'typography' as type-*;

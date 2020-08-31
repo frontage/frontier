@@ -1,14 +1,13 @@
 
-@use '@frontage/frontier-styles/modules' as *;
+@use '../../modules' as *;
 
 
 //
-//	Frontier / UI / Components / Icon
+//	Frontier / Styles / Components / Icon
 //
 
 
-#{ $c-icon } {
-	color: $test;
+.c-icon {
 	position: relative;
 	display: inline-flex; align-items: center; justify-content: center;
 	flex-shrink: 0;

@@ -1,11 +1,11 @@
 
 @use '../../core';
-// @use '../../modules/grid' as grid;
+@use '../grid' as grid;
 @use 'config';
 
 
 //
-//	Frontier / Modules / Typography / Functions
+//	Frontier / Styles / Modules / Typography / Functions
 //
 
 
@@ -35,7 +35,7 @@
 	}
 
 	@if $type-margin {
-		// margin: grid.baseline( $type-margin ) 0;
+		margin: grid.baseline( $type-margin ) 0;
 	}
 	font-size: core.rem( $font-size );
 	line-height: core.rem( core.$base-line * $type-lines );

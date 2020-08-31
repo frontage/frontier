@@ -23,7 +23,6 @@
 		"url": "https://github.com/frontage/frontier/issues"
 	},
 	"scripts": {
-		"storybook": "cd packages/ui && start-storybook",
 		"bootstrap": "npm i && lerna bootstrap --hoist",
 		"update": "lernaupdate"
 	},

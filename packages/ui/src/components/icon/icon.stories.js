@@ -4,7 +4,6 @@ import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 
 //	App
-import './_icon.scss';
 import Icon, { IconMap } from './icon';
 
 
@@ -58,7 +57,7 @@ storiesOf( 'Components/Icon', module ).add( 'Sizes', () => (
 					{ Object.keys( sizeMap ).map( s => (
 						<div key={ s } className="col -va-center -mb3">
 							<Icon className="-pr1" type="tw" size={ s } />
-							<span>{ sizeMap[ s ] }</span>
+							<p>{ sizeMap[ s ] }</p>
 						</div>
 					) )}
 				</div>

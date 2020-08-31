@@ -1,0 +1,13 @@
+
+
+//	Environment
+$env: 'development' !default;
+
+@if ( $env == 'development' ) {
+	@debug '→ Build Environment: Development';
+}
+
+//	Dev overlays
+$dev_show-helper: true !default;
+$dev_show-grid: false !default;
+$dev_show-baseline: true !default;

@@ -1,23 +1,13 @@
 
-@charset 'utf-8';
-@forward 'modules';
 
 //
 //	Frontier / Styles / Index
 //
 
 
-//	Environment
-$env: 'development' !default;
+@charset 'utf-8';
 
-@if ( $env == 'development' ) {
-	@debug '→ Build Environment: Development';
-}
-
-//	Dev overlays
-$dev_show-helper: true !default;
-$dev_show-grid: false !default;
-$dev_show-baseline: true !default;
-
-@import 'base';
-@import 'print';
+@forward 'modules';
+@forward 'base';
+@forward 'components';
+@forward 'print';

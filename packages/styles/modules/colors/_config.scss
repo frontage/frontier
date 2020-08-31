@@ -4,7 +4,7 @@
 
 
 //
-//	Frontier / Modules / Colors / Config
+//	Frontier / Styles / Modules / Colors / Config
 //
 
 
@@ -46,8 +46,8 @@ $config-theme-defaults: (
 		--brand-mid: purple-mid,
 		--brand-secondary: yellow-base,
 		--brand-contrast: purple-dark, // Sits on white
-		--brand-invert: grey-dark, // Sits on brand
-		--brand-secondary-invert:white,
+		--brand-invert: white, // Sits on brand
+		--brand-secondary-invert:grey-dark,
 
 		--base: grey-dark,
 		--text: grey-mid,

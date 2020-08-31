@@ -1,0 +1,48 @@
+
+@use '../../modules' as *;
+
+
+//
+//	Frontier / Styles / Components / Tag
+//
+
+
+.c-tag {
+	$c: &;
+
+	padding: grid-baseline(1) grid-gutter(0.75); margin-right: grid-gutter(0.25);
+	display: inline-block;
+	color: color-get( --brand-invert ); font-weight: bold;
+	background-color: color-get( --brand );
+	border-radius: grid-baseline(5);
+	box-shadow: 0 2px 0 0 rgba(0,0,0,0.05);
+
+	// 	Formats
+
+	&.-format-outline {
+		position: relative;
+		background-color: transparent;
+		color: color-get( --base );
+
+		&:after {
+			content: '';
+			box-sizing: border-box;
+			position: absolute; top: 0; left: 0; bottom: 0; right: 0;
+			border: 1px solid currentColor; border-radius: grid-baseline(2);
+		}
+	}
+
+	// 	Sizes
+
+	&.-size-s {
+		@include type-size( f8 );
+	}
+
+	&.-size-m {
+		@include type-size( f6 );
+	}
+
+	&.-size-l {
+		@include type-size( f5 );
+	}
+}

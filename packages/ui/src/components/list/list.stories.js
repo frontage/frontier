@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 
 
 //	App
-import List from './index';
+import List from './list';
 
 
 //
