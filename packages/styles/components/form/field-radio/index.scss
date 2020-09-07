@@ -1,0 +1,161 @@
+
+@use '../../../modules' as *;
+@use '../../../base/visibility' as *;
+
+
+//
+//	Frontier / Styles / Components / Form / Field Radio
+//
+
+
+.c-field-radio {
+	$c: &;
+
+	&-group {
+		display: flex;
+	}
+
+	label {
+		position: relative;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	+ #{ $c } {
+		margin-left: grid-baseline(2);
+	}
+
+	input {
+		border-radius: 50%;
+
+		&::disabled {
+			pointer-events: none;
+		}
+	}
+
+	&_img {
+		position: relative;
+		background-color: color-get( --brand-secondary-invert );
+
+		&_disabled {
+			display: none;
+		}
+
+		img {
+			display: block;
+			border-radius: 7px;
+		}
+
+		&_tick {
+			display: none;
+			position: absolute;
+			top: grid-baseline(2.5); right: grid-baseline(3.125);
+			z-index: 1;
+			background-color: color-get( --bg );
+			color: color-get( --brand );
+			padding: grid-baseline(1);
+			border-radius: 50%;
+		}
+	}
+
+	// 	Formats
+
+	&.-format-image	{
+		position: relative;
+
+		label {
+			flex-flow: row wrap;
+			height: 100%;
+		}
+
+		#{ $c }_text {
+			color: color-get( --base );
+			margin: grid-baseline(3) auto 0;
+			font-weight: bold;
+		}
+
+		+ #{ $c } {
+			margin-left: 0;
+		}
+
+		input {
+			position: absolute;
+			opacity: 0;
+			width: 0;
+			height: 0;
+
+			+ #{ $c }_img {
+				border: 1px solid transparent;
+				overflow: hidden;
+			}
+
+			&:checked {
+				+ #{ $c }_img {
+					border-color: color-get( --brand );
+				}
+			}
+
+			&:disabled + #{ $c }_img {
+				border-color: color-get( --text-light );
+				cursor: not-allowed;
+
+				#{ $c }_img_disabled {
+					display: block;
+
+					&::before, &::after {
+						content: '';
+						position: absolute;
+						height: 150%; width: 1px;
+						top: -25%; right: 50%;
+						z-index: 1;
+						background-color: color-get( --text-light );
+					}
+
+					&::before { transform: rotate(45deg); }
+
+					&::after { transform: rotate(-45deg); }
+				}
+
+				&::after {
+					content: '';
+					position: absolute;
+					top: 0; right: 0;
+					height: 100%; width: 100%;
+					background-color: color-get( --bg, 0.6 );
+				}
+			}
+		}
+	}
+
+	&.-format-image-overlay {
+		input {
+			+ #{ $c }_img {
+				border: none;
+			}
+
+			&:checked {
+
+				~ #{ $c }_text {
+					opacity: 0.6;
+				}
+
+				+ #{ $c }_img {
+					border: none;
+
+					#{ $c }_img_tick {
+						display: flex;
+					}
+
+					&:after {
+						content: '';
+						position: absolute;
+						top: 0; right: 0; bottom: 0; left: 0;
+						background-color: color-get( --brand );
+						opacity: 0.5;
+						border-radius: 7px;
+					}
+				}
+			}
+		}
+	}
+}

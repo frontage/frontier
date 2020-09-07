@@ -1,0 +1,55 @@
+
+@use '../../modules' as *;
+
+
+//
+//	Frontier / Styles / Components / Expandable
+//
+
+
+//	Variables
+$box-shadow: 2px 4px 12px 0 rgba( 0, 0, 0, 0.1 );
+
+.c-card {
+	$c: &;
+
+	&:not([class*="-t-"]) {
+		@include color-set( --bg, white );
+		@include color-set( --base, grey-dark );
+		@include color-set( --headline, grey-dark );
+		@include color-set( --text, grey-mid );
+	}
+
+	height: 100%;
+	position: relative; z-index: 10;
+	display: flex;
+	flex-direction: column;
+	box-shadow: $box-shadow;
+	color: color-get( --base );
+	background-color: color-get( --bg );
+	border-radius: grid-baseline(1);
+	padding: grid-baseline(4) grid-baseline(4.5); box-sizing: border-box;
+	overflow: hidden;
+
+	//	Elements
+
+	//	Sizes
+
+	//	Formats
+
+	&.-format-auto {
+		height: auto;
+	}
+
+	//	Styles
+
+	&.-style-flat {
+		box-shadow: none;
+	}
+
+	//	States
+
+	//	Themes
+
+	// 	Contexts
+}

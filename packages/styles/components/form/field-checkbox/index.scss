@@ -1,0 +1,55 @@
+
+@use '../../../modules' as *;
+
+
+//
+//	Frontier / Styles / Components / Form / Field Checkbox
+//
+
+
+.c-field-checkbox {
+    $c: &;
+
+    // Elements
+
+	label {
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.c-field_label {
+		margin-left: grid-gutter(0.5);
+	}
+
+	input[type="checkbox"] {
+		display: block;
+		margin: 0;
+
+		&:checked + .c-icon {
+			display: block;
+		}
+
+		+ .c-icon {
+			width: 100%;
+			padding: grid-baseline(0.5); box-sizing: border-box;
+			display: none;
+			position: absolute; bottom: 0; left: 0;
+			color: color-get( --brand );
+		}
+	}
+
+	&_input {
+		position: relative;
+	}
+
+	//	Layouts
+
+	&.-layout-reverse {
+
+		.c-field_label {
+			order: -1;
+			margin-right: grid-gutter(0.5); margin-left: 0;
+		}
+	}
+}
+

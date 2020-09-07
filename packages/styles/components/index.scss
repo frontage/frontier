@@ -5,6 +5,17 @@
 //
 
 
+@forward 'avatar' as avatar-*;
+@forward 'banner' as banner-*;
+@forward 'breadcrumbs' as breadcrumbs-*;
+@forward 'button' as button-*;
+@forward 'card' as card-*;
+@forward 'expandable' as expandable-*;
+@forward 'form' as form-*;
+@forward 'headline' as headline-*;
 @forward 'icon' as icon-*;
+@forward 'link' as link-*;
 @forward 'list' as list-*;
 @forward 'tag' as tag-*;
+@forward 'visually-hidden' as visually-hidden-*;
+

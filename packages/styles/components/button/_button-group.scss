@@ -1,0 +1,51 @@
+
+
+@use '../../modules' as *;
+
+
+//
+//	Frontier / Styles / Components / Button Group
+//
+
+
+.c-button-group {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start; justify-content: flex-start;
+
+	.c-button:not(:last-child) {
+		margin-right: grid-baseline(1);
+	}
+
+	&.-a-center {
+		justify-content: center;
+	}
+
+	&.-a-right {
+		justify-content: flex-end;
+	}
+
+	&.-va-center {
+		align-items: center;
+	}
+
+	&.-format-full {
+		flex-flow: row wrap;
+		flex: 1 1 100%;
+		align-items: normal;
+
+		.c-button {
+			flex: 1 1 auto;
+			text-align: center;
+			justify-content: space-between;
+		}
+	}
+
+	&.-format-vertical {
+		flex-flow: column wrap;
+
+		.c-button {
+			margin: 0 0 grid-baseline(1) 0;
+		}
+	}
+}

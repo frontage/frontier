@@ -1,0 +1,85 @@
+
+@use '../../modules' as *;
+
+
+//
+//	Frontier / Styles / Components / Expandable
+//
+
+
+.c-expandable {
+	$c: &;
+
+	color: color-get( --base );
+	position: relative;
+	padding: grid-baseline(5) 0;
+
+	&:after {
+		content: '';
+		position: absolute;
+		right: 0; bottom: 0; left: 0;
+		border-bottom: 1px solid color-get( --base, 0.1 );
+	}
+
+	//	Elements
+
+	&_button {
+		position: relative;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		padding: grid-baseline(5) 0; box-sizing: border-box;
+		margin: grid-baseline(-5) 0;
+		text-align: left;
+		width: 100%;
+
+		span {
+			@include type-size( f6 );
+		}
+
+		.c-icon {
+			transition: transform 0.3s;
+		}
+
+		&:after {
+			content: none;
+			position: absolute;
+			right: 0; bottom: 0; left: 0;
+			border-bottom: 1px solid color-get( --base, 0.1 );
+		}
+	}
+
+	&_viewport {
+		width: 100%; height: auto;
+		position: relative;
+		will-change: height, opacity;
+		clip-path: inset(0 0 0 0);
+	}
+		&_panel {
+			width: 100%;
+			position: absolute; top: 0;
+		}
+			&_content {
+				width: 100%;
+				margin: grid-baseline(2) 0 0;
+
+				p {
+					@include type-size( f7, $margin: 1 );
+				}
+
+				> :last-child {
+					margin-bottom: 0;
+				}
+			}
+
+	// 	States
+
+	&.-is-open {
+
+		#{ $c }_button {
+			.c-icon {
+				transform: rotate( -180deg );
+			}
+		}
+	}
+}

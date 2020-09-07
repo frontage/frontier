@@ -1,0 +1,50 @@
+
+@use '../../modules' as *;
+
+
+//
+//	Frontier / Styles / Components / Headline
+//
+
+
+.c-headline {
+	$c: &;
+
+	position: relative;
+
+	//	Styles
+
+	&.-style-highlight {
+		padding-left: grid-gutter(1.5);
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 50%; left: 0;
+			transform: translateY(-50%);
+			height: 70%; width: grid-baseline(0.375);
+			border-radius: grid-baseline(2);
+			background-color: color-get( --brand );
+		}
+	}
+}
+
+
+/**
+ * 	Media Queries
+ *	--------------------------------------------------
+ */
+
+/** Breakpoint:	Small ----------------------- */
+
+@include breakpoint-for( small ) using ( $bp ) {
+
+	.c-headline {
+
+		//	Styles
+
+		&.-style-highlight {
+			padding-left: grid-gutter(0.5);
+		}
+	}
+}

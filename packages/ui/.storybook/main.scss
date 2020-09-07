@@ -9,5 +9,3 @@ $env: "production";
 @if variable-exists(nodeEnv) {
 	$env: $nodeEnv;
 }
-
-// @use '~@frontage/frontier-styles/index';

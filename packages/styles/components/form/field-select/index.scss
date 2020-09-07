@@ -1,0 +1,64 @@
+
+@use '../../../modules' as *;
+
+
+//
+//	Frontier / Styles / Components / Form / Field Select
+//
+
+
+.c-field-select {
+	$c: &;
+
+	// Elements
+
+	select {
+		cursor: pointer;
+		width: 100%;
+
+		+ .c-icon {
+			pointer-events: none;
+			position: absolute;
+			right: grid-baseline(1.75); bottom: grid-baseline(2);
+		}
+	}
+
+	//	Styles
+
+	&.-style-tag {
+
+		label {
+			@include type-size( f9 );
+			text-transform: uppercase;
+			font-weight: 500;
+		}
+
+		select {
+			@include type-size( f9, $margin: 0 );
+			border: none;
+			border-radius: grid-baseline(2.5);
+			color: color-get( --text );
+			background-color: color-get( --bg );
+			height: grid-baseline(5);
+
+			+ .c-icon {
+				bottom: grid-baseline(1);
+			}
+		}
+	}
+
+	//	Formats
+
+	&.-format-left {
+
+		label {
+			flex-direction: row;
+			align-items: center;
+		}
+
+		select {
+			margin-left: grid-baseline(2);
+		}
+	}
+
+}

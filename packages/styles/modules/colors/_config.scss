@@ -23,10 +23,10 @@ $config-defaults: (
 	purple-mid: #3F309C,
 	purple-dark: #342882,
 
-	grey-base: #B5B5B5,
-	grey-mid: #7A7A7A,
-	grey-dark: #4A4A4A,
-	grey-darker: #363636,
+	grey-base: #787878,
+	grey-mid: #6B6B6B,
+	grey-dark: #5E5E5E,
+	grey-darker: #515151,
 
 	blue-base: #3852E8,
 	blue-mid: #3046C7,
@@ -60,7 +60,7 @@ $config-theme-defaults: (
 		--link-light: blue-mid,
 		--link-light-hover: blue-dark,
 
-		--button-text: --base,
+		--button-text: --brand-invert,
 		--button-bg: --brand,
 		--button-highlight: --brand-mid,
 		--button-secondary-text: --brand,

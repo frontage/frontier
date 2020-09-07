@@ -1,0 +1,102 @@
+
+@use '../../modules' as *;
+
+
+//
+//	Frontier / Styles / Components / Form / Fields
+//
+
+
+.c-field {
+	$c: &;
+
+	margin-bottom: grid-baseline(1);
+
+
+	//	Elements ----------------
+
+	label {
+		display: flex;
+		position: relative;
+		flex-direction: column;
+		color: color-get( --text );
+		cursor: pointer;
+	}
+
+	select, textarea, input[type] {
+		@include type-size( default, $margin: 0 );
+		height: grid-baseline(7);
+		padding: grid-baseline(1) grid-baseline(5) grid-baseline(1) grid-baseline(2.5);
+		box-sizing: border-box;
+		position: relative;
+		caret-color: color-get( --brand );
+		color: color-get( --base );
+		outline: none;
+		background-color: #{ color-get( white ) };
+		border: 1px solid color-get( --base, 0.1 );
+		-moz-appearance: none;
+		-webkit-appearance: none;
+
+		&:focus {
+			border-color: color-get( --state-focus );
+		}
+
+		&::placeholder {
+			color: color-get( --text-light );
+		}
+
+		&:disabled {
+			color: grey;
+			background-color: color-get( --text-light );
+			border: none;
+
+			&::placeholder {
+				color: color-get( --text-light, 0.6 );
+			}
+
+			+ .c-icon {
+				color: color-get( --text-light );
+			}
+		}
+	}
+
+	fieldset {
+		border: none;
+	}
+
+	input[type="checkbox"], input[type="radio"] {
+		width: grid-baseline(3); height: grid-baseline(3);
+		padding: 0;
+		border: 1px solid color-get( --text-light );
+		cursor: pointer;
+
+		&:checked {
+			border-color: color-get( --brand );
+		}
+	}
+
+	&_message {
+		margin: 0;
+	}
+
+	//	States	 ----------------
+
+	&.-is-error {
+		select, textarea, input[type] {
+			border-color: color-get( --state-alert );
+		}
+
+		#{$c}_message {
+			margin-top: grid-baseline(1);
+			color: color-get( --state-alert );
+		}
+	}
+
+	//	Styles	 ----------------
+
+	&.-style-rounded {
+		select, textarea, input[type]  {
+			border-radius: grid-baseline(3.75);
+		}
+	}
+}

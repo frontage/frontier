@@ -1,0 +1,175 @@
+
+@use '../../modules' as *;
+
+
+//
+//	Frontier / Styles / Components / Button
+//
+
+
+.c-button {
+	$c: &;
+	$button-height: grid-baseline(7);
+
+	--btn-radius: #{ $button-height / 2 };
+
+	@include type-size( f8, $margin: false );
+	font-weight: 600;
+	height: $button-height;
+	padding: grid-baseline(1); box-sizing: border-box;
+	position: relative;
+	display: inline-block;
+	line-height: grid-baseline(3); text-align: center; text-decoration: none;
+	font-weight: 500; color: color-get( --brand-invert );
+	background-color: color-get( --button-bg );
+	border-radius: var(--btn-radius);
+	transition:
+		background-color 0.3s,
+		border 0.3s,
+		color 0.3s;
+
+	//	Elements   ------------------
+
+	&_content {
+		position: relative; z-index: 10;
+		height: 100%; width: 100%; max-width: 100%;
+		padding: 0 grid-baseline(2); box-sizing: border-box;
+		display: inline-flex; align-items: center; justify-content: center;
+
+		span {
+			margin: 0 grid-baseline(0.5);
+		}
+	}
+		&_text {
+			display: flex;
+		}
+
+
+	//	Styles	 --------------------
+
+	&.-style-none {
+		color: color-get( --text );
+		font-weight: 500;
+		text-transform: none;
+		background: transparent;
+		border: none;
+	}
+
+	&.-style-muted {
+		@include color-set( --button-bg, blue-grey );
+
+		&:hover {
+			@include color-set( --button-bg, --brand );
+		}
+	}
+
+	&.-style-secondary {
+		background-color: color-get( --button-secondary-bg );
+		color: color-get( --button-secondary-text );
+		border: 1px solid color-get( --button-secondary-text );
+
+		&:hover {
+			color: color-get( --button-text );
+		}
+	}
+
+	&.-style-secondary-muted {
+		background-color: transparent;
+		opacity: 0.5;
+		border: 1px solid color-get( --button-text );
+
+		&:hover {
+			opacity: 1;
+			border-color: color-get( --brand );
+		}
+	}
+
+	&.-style-transparent {
+		@extend .-style-secondary;
+		background-color: transparent;
+	}
+
+	&.-style-white {
+		@include color-set( --button-text, --brand-mid );
+		@include color-set( --button-bg, white );
+
+		&:hover {
+			@include color-set( --button-text, white );
+		}
+	}
+
+	//	Sizes	 --------------------
+
+	&.-size-s {
+		height: grid-baseline(5);
+
+		#{$c}_content {
+			padding: 0 grid-baseline(1);
+		}
+	}
+
+	&.-size-m {
+		height: grid-baseline(7);
+
+		#{$c}_content {
+			padding: 0 grid-baseline(1.5);
+		}
+			.c-icon {
+				margin: 0 grid-baseline(0.5);
+			}
+
+			#{$c}_text {
+				margin: 0 grid-baseline(0.75);
+				line-height: grid-baseline(5);
+			}
+	}
+
+	&.-size-l {
+		height: grid-baseline(9);
+	}
+
+
+	//	Formats	 --------------------
+
+	&.-format-icon {
+		--btn-radius: 50%;
+
+		height: grid-baseline(7); width: grid-baseline(7);
+
+		#{$c}_content {
+			padding-left: 0; padding-right: 0;
+		}
+			.c-icon {
+				margin: 0;
+			}
+
+		&.-size-s {
+			height: grid-baseline(5); width: grid-baseline(5);
+		}
+
+		&.-size-m {
+			height: grid-baseline(9); width: grid-baseline(9);
+		}
+
+		&.-size-l {
+			height: grid-baseline(11); width: grid-baseline(11);
+		}
+	}
+
+	&.-format-full {
+		width: 100%;
+		flex: 1 1 auto;
+	}
+
+
+	//	States	 --------------------
+
+	&.-is-disabled {
+		pointer-events: none !important;
+		background-color: color-get( pm-grey );
+
+		#{$c}_content {
+			opacity: 0.25;
+		}
+	}
+}

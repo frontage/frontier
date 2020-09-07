@@ -1,0 +1,38 @@
+
+@use '../../modules' as *;
+
+
+//
+//	Frontier / Styles / Components / Banner
+//
+
+
+.c-banner {
+	$c: &;
+
+	padding: grid-baseline(1);
+	text-align: center;
+	position: relative;
+	background-color: color-get( --brand );
+    color: color-get( --base );
+
+	& &_close {
+		display: flex; align-items: center;
+		position: absolute; top: 50%; right: grid-gutter(1);
+		transform: translateY(-50%);
+	}
+
+	// 	Styles
+
+	&.-style-warning {
+		background-color: color-get( --state-alert );
+	}
+
+	&.-style-success {
+		background-color: color-get( --state-success );
+	}
+
+	&.-style-error {
+		background-color: color-get( --state-error );
+	}
+}

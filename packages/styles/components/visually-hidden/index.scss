@@ -1,0 +1,15 @@
+
+@use '../../modules' as *;
+@use '../../base/visibility' as *;
+
+
+//
+//	Frontier / Styles / Components / Visually Hidden
+//
+
+
+.c-visually-hidden {
+	$c: &;
+
+	@extend .-visually-hidden;
+}

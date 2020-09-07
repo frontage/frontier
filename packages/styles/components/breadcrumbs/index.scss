@@ -1,0 +1,61 @@
+
+@use '../../modules' as *;
+
+
+//
+//	Frontier / Styles / Components / Expandable
+//
+
+
+.c-breadcrumbs {
+	$c: &;
+
+	//	Elements
+
+	ul {
+		position: relative;
+		align-items: flex-start;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+
+		li {
+			align-items: center;
+			display: flex;
+		}
+	}
+
+	.c-icon {
+		color: color-get( --text );
+		opacity: 0.5;
+	}
+
+	.c-link {
+		color: color-get( --text );
+		margin-right: grid-baseline(0.75); margin-left: grid-baseline(0.75);
+	}
+
+	//	Styles
+
+	&.-style-highlight {
+
+		ul {
+			&:before {
+				content: '';
+				position: absolute;
+				top: 50%; left: 0;
+				transform: translateY(-50%);
+				height: 10px; width: 3px;
+				border-radius: grid-baseline(2);
+				background-color: color-get( --brand );
+			}
+
+			li {
+
+				&:first-child {
+					margin-left: grid-baseline(2.75);
+				}
+			}
+		}
+	}
+}

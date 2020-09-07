@@ -10,7 +10,7 @@
 .c-list {
 	$c: &;
 
-	@include type-size( default );
+	@include type-size(default);
 	list-style: none;
 
 	// Elements

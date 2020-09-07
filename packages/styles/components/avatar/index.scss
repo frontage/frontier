@@ -1,0 +1,80 @@
+
+@use '../../modules' as *;
+
+
+//
+//	Frontier / Styles / Components / Avatar
+//
+
+
+.c-avatar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: grid-baseline(5); width: grid-baseline(5);
+	border-radius: 50%;
+	color: color-get( --base );
+	font-weight: bold;
+	border: 1px solid color-get( --base, 0.05 );
+	background-color: color-get( --base, 0.1 );
+	overflow: hidden;
+
+	// Sizes
+
+	&.-size-s {
+		@include type-size(f8);
+		width: grid-baseline(3.75); height: grid-baseline(3.75);
+	}
+
+	&.-size-m {
+		@include type-size(f5);
+		width: grid-baseline(7.25); height: grid-baseline(7.25);
+	}
+
+	&.-size-l {
+		@include type-size(f3);
+		width: grid-baseline(10.25); height: grid-baseline(10.25);
+	}
+
+	&.-size-xl {
+		@include type-size(f2);
+		width: grid-baseline(15.25); height: grid-baseline(15.25);
+	}
+
+	&.-size-xxl {
+		@include type-size(f1);
+		width: grid-baseline(21.25); height: grid-baseline(21.25);
+	}
+
+	// Styles
+
+	&.-style-default {
+
+		.c-logo {
+			color: color-get( brand-secondary-invert, 0.25);
+		}
+	}
+}
+
+
+/**
+ * 	Media Queries
+ *	--------------------------------------------------
+ */
+
+/** Breakpoint:	Small ----------------------- */
+
+@include breakpoint-for( small ) using ( $bp ) {
+
+	.c-avatar {
+
+		width: grid-baseline(3.75); height: grid-baseline(3.75);
+
+		// Styles
+
+		&.-style-default {
+			padding: grid-baseline(0.75);
+			box-sizing: border-box;
+		}
+	}
+}

@@ -3,18 +3,25 @@
 	"title": "Frontier ui",
 	"version": "0.1.0",
 	"description": "Frontier Component Library",
-	"main": "./src/index.js",
-	"module": "./src/index.js",
+	"main": "./index.js",
+	"module": "./index.js",
 	"scripts": {
 		"storybook": "start-storybook"
 	},
 	"author": "Kira Derksen & Zachary Evans (http://frontage.io)",
 	"license": "MIT",
 	"dependencies": {
-		"react": "^16.13.1"
+		"react": "^16.13.1",
+		"react-spring": "^9.0.0-rc.3",
+		"resize-observer-polyfill": "^1.5.1",
+		"lodash": "^4.17.19"
 	},
 	"devDependencies": {
-		"@storybook/react": "^5.3.19",
+		"@storybook/react": "^6.0.20",
+		"@storybook/addon-a11y": "^6.0.20",
+		"@storybook/theming": "^6.0.20",
+		"@storybook/addon-essentials": "^6.0.20",
+		"@storybook/addons": "^6.0.20",
 		"@frontage/frontier-styles": "^0.1.0"
 	},
 	"repository": {
