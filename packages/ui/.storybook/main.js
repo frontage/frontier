@@ -7,7 +7,7 @@
 
 
 module.exports = {
-	stories: [ '../src/components/**/*.stories.js' ],
+	stories: [ '../components/**/*.stories.js' ],
 	addons: [ '@storybook/addon-a11y', '@storybook/addon-essentials' ],
 	webpackFinal: async ( config ) => {
 		config.module.rules.push({
