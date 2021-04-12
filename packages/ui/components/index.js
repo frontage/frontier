@@ -18,5 +18,6 @@ export { default as Headline } from './headline';
 export { default as Icon } from './icon';
 export { default as Link } from './link';
 export { default as List } from './list';
+export { default as Loader } from './loader';
 export { default as Tag } from './tag';
 export { default as VisuallyHidden } from './visually-hidden';

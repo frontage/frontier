@@ -1,0 +1,26 @@
+
+@use '../../modules' as *;
+
+
+//
+//	Frontier / Styles / Components / Loader
+//
+
+
+@keyframes spin {
+	to { transform: rotate( 360deg ); }
+}
+
+.c-loader {
+	$c: &;
+
+	display: flex;
+	margin: grid-baseline(0.5);
+
+	//	Elements
+
+	.c-icon {
+		transform-origin: 50% 50%;
+		animation: spin 3s linear infinite;
+	}
+}
